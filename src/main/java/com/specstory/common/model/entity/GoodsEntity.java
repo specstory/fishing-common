@@ -1,13 +1,16 @@
 package com.specstory.common.model.entity;
 
 
-import com.specstory.common.util.StringPrefixedSequenceIdGenerator;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.specstory.common.util.StringPrefixedSequenceIdGenerator;
+import lombok.*;
+import org.hibernate.annotations.GenericGenerator;
+import org.springframework.data.annotation.LastModifiedDate;
+
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -59,7 +62,7 @@ public class GoodsEntity   {
 
     @Column(columnDefinition = "등록일시", insertable = false, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    private Date registrationDatetime;
+    private java.util.Date registrationDatetime;
 
     @Column(columnDefinition = "수정자", length = 20)
     private String updateId;
@@ -73,23 +76,7 @@ public class GoodsEntity   {
     private BrandEntity brandEntity;
 
     //@JsonIgnoreProperties("goods")
-  /*  @OneToMany(fetch = FetchType.EAGER, mappedBy = "goods", cascade = CascadeType.ALL)
-    private List<GoodsAttributeEntity> goodsAttributes = new ArrayList<>();*/
-//
-//    /*관계형 개체 */
-//    public void AddgoodsAttribute(GoodsAttributeEntity item){
-//        if(this.goodsAttributes == null){
-//            this.goodsAttributes = new ArrayList<>();
-//        }
-//
-//        this.goodsAttributes.add(item);
-//    }
-//    @JsonIgnoreProperties("goods")
-//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "goods", cascade = CascadeType.ALL)
-//    //@JoinColumn(name = "goods_id", insertable=false, updatable=false, columnDefinition = "상품카테고리 ")
-//    List<GoodsCategoryEntity> goodsCategorys = new ArrayList<>();
-
-    //@JsonIgnoreProperties("goods")
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "goods", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name="goods_id")
     List<GoodsImageEntity> goodsImages = new ArrayList<>();
 }

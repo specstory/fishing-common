@@ -2,10 +2,11 @@ package com.specstory.common.model.entity;
 
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+
+import lombok.Data;
 
 
 @Data
@@ -53,7 +54,4 @@ public class GoodsImageEntity {
     @Column(name = "update_id")
     private String update_id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "goods_id", insertable = false, updatable = false)
-    GoodsEntity goods;  // <=== ReadOnly 설정
 }
