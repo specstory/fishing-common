@@ -44,8 +44,8 @@ public class GoodsAttributeEntity {
     // 연관관계 매핑
 //    @JsonIgnore //JSON 변환시 무한 루프 방지용
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "goods_id", insertable=false, updatable=false) // <=== ReadOnly 설정
-    private GoodsEntity goods;
+    @JoinColumn(name = "goods_id")
+    private GoodsEntity goodsEntity;
 ////
 //    public void updateGoods(GoodsEntity item){
 //        this.goods = item;
