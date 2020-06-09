@@ -15,9 +15,6 @@ public class GoodsAttributeEntity {
     @Column(name = "attr_id")
     private long attrId;
 
-    @Column(name = "goods_id", nullable = false)
-    private String goodsId;
-
     @Column(name = "attr_name")
     private String attrName;
 

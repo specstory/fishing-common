@@ -11,9 +11,7 @@ import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.annotation.LastModifiedDate;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @NoArgsConstructor
 @Getter
@@ -76,6 +74,10 @@ public class GoodsEntity   {
     private BrandEntity brandEntity;
 
     //@JsonIgnoreProperties("goods")
+    @OneToMany(mappedBy = "goodsEntity", fetch = FetchType.LAZY)
+    Set<GoodsAttributeEntity> goodsAttributeEntities = new HashSet<>();
+
+   //@JsonIgnoreProperties("goods")
     @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name="goods_id")
     List<GoodsImageEntity> goodsImages = new ArrayList<>();
