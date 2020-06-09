@@ -74,6 +74,7 @@ public class GoodsEntity   {
     private BrandEntity brandEntity;
 
     //@JsonIgnoreProperties("goods")
+    //@OneToMany(mappedBy = "goodsEntity", fetch = FetchType.LAZY)
     @OneToMany(mappedBy = "goodsEntity", fetch = FetchType.LAZY)
     Set<GoodsAttributeEntity> goodsAttributeEntities = new HashSet<>();
 
@@ -81,4 +82,7 @@ public class GoodsEntity   {
     @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name="goods_id")
     List<GoodsImageEntity> goodsImages = new ArrayList<>();
+
+    @OneToMany(mappedBy = "goodsEntity", fetch = FetchType.LAZY)
+    Set<ReviewEntity> reviewEntities = new HashSet<>();
 }

@@ -5,25 +5,15 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@Getter
-@Setter
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity //클래스와 테이블 매핑
 @Table(name="review") // 매핑할 테이블 정보 명시
 public class ReviewEntity {
 
-  @Id // 기본키 매핑
-  @GeneratedValue(strategy = GenerationType.AUTO)
+   @Id // 기본키 매핑
+   @GeneratedValue(strategy = GenerationType.AUTO)
    @Column(name = "review_Id", nullable = false)
    private String reviewId;
-
-   @Column(name = "goods_Id", nullable = false)
-   private String goodsId;
-
-   @Column(name = "user_Id", nullable = false)
-   private String userId;
 
    @Column(name = "score", nullable = false)
    private String score;
@@ -42,4 +32,12 @@ public class ReviewEntity {
 
    @Column(name = "registration_Datetime", nullable = false)
    private String registrationDatetime;
+
+   @ManyToOne(fetch = FetchType.LAZY)
+   @JoinColumn(name = "goods_id")
+   private GoodsEntity goodsEntity;
+
+   @ManyToOne(fetch = FetchType.LAZY)
+   @JoinColumn(name = "user_id")
+   private UserEntity userEntity;
 }
