@@ -11,15 +11,24 @@ import java.util.Date;
 @Table(name = "goods_attribute") // 매핑할 테이블 정보 명시
 public class GoodsAttributeEntity {
     @Id // 기본키 매핑
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "attr_id")
-    private long attrId;
+    private Long attrId;
 
     @Column(name = "attr_name")
     private String attrName;
 
+    @Column(name = "attr_kor_name")
+    private String attrKorName;
+
     @Column(name = "attr_value")
     private String attrValue;
+
+    @Column(name = "unit")
+    private String unit;
+
+    @Column(name = "orderNo")
+    private Integer orderNo;
 
     @Column(insertable = false)
     private String useYn;
