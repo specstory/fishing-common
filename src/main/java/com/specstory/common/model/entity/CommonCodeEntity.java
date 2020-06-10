@@ -17,7 +17,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @Entity //클래스와 테이블 매핑
 @Table(name="common_code") // 매핑할 테이블 정보 명시
-public class CommonCodeEntity {
+public class CommonCodeEntity extends BaseEntity {
 
   @Id // 기본키 매핑
    @Column(name = "code", nullable = false)
@@ -40,14 +40,5 @@ public class CommonCodeEntity {
 
    @Column(name = "order_No", nullable = true)
    private long orderNo;
-
-   @Column(name = "use_Yn", nullable = true)
-   private String useYn;
-
-   @Column(name = "registrant_Id", nullable = true)
-   private String registrantId;
-
-   @Column(name = "update_Id", nullable = true)
-   private String updateId;
 
 }

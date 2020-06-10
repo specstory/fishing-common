@@ -14,7 +14,7 @@ import lombok.Data;
 @NoArgsConstructor
 @Entity //클래스와 테이블 매핑
 @Table(name = "goods_image") // 매핑할 테이블 정보 명시
-public class GoodsImageEntity {
+public class GoodsImageEntity extends BaseEntity {
 
     @Id // 기본키 매핑
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -41,17 +41,5 @@ public class GoodsImageEntity {
 
     @Column(name = "main_image_yn")
     private String mainImageYn;
-
-    @Column(name = "use_yn")
-    private String useYn;
-
-    @Column(name = "registrant_id")
-    private String registrantId;
-
-    @Column(name = "update_datetime")
-    private java.sql.Timestamp update_datetime;
-
-    @Column(name = "update_id")
-    private String update_id;
 
 }

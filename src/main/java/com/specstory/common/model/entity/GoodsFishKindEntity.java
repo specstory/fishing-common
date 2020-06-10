@@ -8,26 +8,9 @@ import java.util.Date;
 @Data
 @Entity
 @Table(name = "goods_fish_kind")
-public class GoodsFishKindEntity {
+public class GoodsFishKindEntity extends BaseEntity {
     @EmbeddedId
     private GoodsFishKindIdEntity goodsFishKindId;
-
-    @Column(insertable = false, columnDefinition = "사용여부", length = 1)
-    private String useYn;
-
-    @Column(columnDefinition = "등록자", length = 20)
-    private String registrantId;
-
-    @Column(columnDefinition = "등록일시", insertable = false, updatable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date registrationDatetime;
-
-    @Column(columnDefinition = "수정자", length = 20)
-    private String updateId;
-
-    @Column(columnDefinition = "수정일시")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date updateDatetime;
 
     /*
      @MapsId는 외래 키와 매핑한 연관관계를 기본 키에도 매핑하겠다는 뜻

@@ -12,7 +12,7 @@ import java.util.Date;
 @Data
 @Entity //클래스와 테이블 매핑
 @Table(name = "brand")
-public class BrandEntity {
+public class BrandEntity extends BaseEntity {
 
    @Id // 기본키 매핑
    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "brand_id")
@@ -32,21 +32,4 @@ public class BrandEntity {
 
    @Column(columnDefinition = "순서")
    private long orderNo;
-
-   @Column(insertable = false, columnDefinition = "사용여부", length = 1)
-   private String useYn;
-
-   @Column(columnDefinition = "등록자", length = 20)
-   private String registrantId;
-
-   @Column(columnDefinition = "등록일시", insertable = false, updatable = false)
-   @Temporal(TemporalType.TIMESTAMP)
-   private Date registrationDatetime;
-
-   @Column(columnDefinition = "수정자", length = 20)
-   private String updateId;
-
-   @Column(columnDefinition = "수정일시")
-   @Temporal(TemporalType.TIMESTAMP)
-   private Date  updateDatetime;
 }

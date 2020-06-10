@@ -11,7 +11,7 @@ import java.util.Date;
 @Data
 @Entity //클래스와 테이블 매핑
 @Table(name="category") // 매핑할 테이블 정보 명시
-public class CategoryEntity {
+public class CategoryEntity extends BaseEntity {
 
    @Id // 기본키 매핑
    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "category_seq")
@@ -36,21 +36,4 @@ public class CategoryEntity {
 
    @Column
    private String url;
-
-   @Column(insertable = false)
-   private String useYn;
-
-   @Column
-   private String registrantId;
-
-   @Column(insertable = false, updatable = false)
-   @Temporal(TemporalType.TIMESTAMP)
-   private Date registrationDatetime;
-
-   @Column
-   private String updateId;
-
-   @Column
-   @Temporal(TemporalType.TIMESTAMP)
-   private Date updateDatetime;
 }

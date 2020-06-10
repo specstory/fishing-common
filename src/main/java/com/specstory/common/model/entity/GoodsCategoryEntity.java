@@ -13,26 +13,9 @@ import java.util.Date;
 @NoArgsConstructor
 @Entity //클래스와 테이블 매핑
 @Table(name="goods_category") // 매핑할 테이블 정보 명시
-public class GoodsCategoryEntity {
+public class GoodsCategoryEntity extends BaseEntity {
    @EmbeddedId
    private GoodsCategoryIdEntity goodsCategoryIdEntity;
-
-   @Column(insertable = false, columnDefinition = "사용여부", length = 1)
-   private String useYn;
-
-   @Column(columnDefinition = "등록자", length = 20)
-   private String registrantId;
-
-   @Column(columnDefinition = "등록일시", insertable = false, updatable = false)
-   @Temporal(TemporalType.TIMESTAMP)
-   private Date registrationDatetime;
-
-   @Column(columnDefinition = "수정자", length = 20)
-   private String updateId;
-
-   @Column(columnDefinition = "수정일시")
-   @Temporal(TemporalType.TIMESTAMP)
-   private Date updateDatetime;
 
 //    @ManyToOne(fetch = FetchType.LAZY)
 //    @JoinColumn(name="goods_Id", insertable=false, updatable=false)

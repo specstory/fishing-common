@@ -18,7 +18,7 @@ import java.util.*;
 @Setter
 @Entity //클래스와 테이블 매핑
 @Table(name = "goods") // 매핑할 테이블 정보 명시
-public class GoodsEntity   {
+public class GoodsEntity extends BaseEntity {
 /*    @Builder
     public GoodsEntity(String goodsId, String brandId, String goodsName, int price, String afterService
             , List<GoodsAttributeEntity> goodsAttributes
@@ -51,23 +51,6 @@ public class GoodsEntity   {
 
     @Column(name = "after_service", columnDefinition = "AS")
     private String afterService;
-
-    @Column(name = "use_yn", columnDefinition = "사용여부", length =  1)
-    private String useYn;
-
-    @Column(columnDefinition = "등록자", length = 20)
-    private String registrantId;
-
-    @Column(columnDefinition = "등록일시", insertable = false, updatable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private java.util.Date registrationDatetime;
-
-    @Column(columnDefinition = "수정자", length = 20)
-    private String updateId;
-
-    @Column(columnDefinition = "수정일시")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date updateDatetime;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="brand_id")

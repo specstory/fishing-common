@@ -9,8 +9,8 @@ import java.util.Date;
 @Data
 @Entity //클래스와 테이블 매핑
 @Table(name = "goods_attribute") // 매핑할 테이블 정보 명시
-public class GoodsAttributeEntity {
-    @Id // 기본키 매핑
+public class GoodsAttributeEntity extends BaseEntity {
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "attr_id")
     private Long attrId;
@@ -29,23 +29,6 @@ public class GoodsAttributeEntity {
 
     @Column(name = "orderNo")
     private Integer orderNo;
-
-    @Column(insertable = false)
-    private String useYn;
-
-    @Column
-    private String registrantId;
-
-    @Column(insertable = false, updatable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date registrationDatetime;
-
-    @Column
-    private String updateId;
-
-    @Column
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date  updateDatetime;
 
     // 연관관계 매핑
 //    @JsonIgnore //JSON 변환시 무한 루프 방지용

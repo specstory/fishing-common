@@ -10,7 +10,7 @@ import java.util.Date;
 @Data
 @Entity
 @Table(name = "fish_kind")
-public class FishKindEntity {
+public class FishKindEntity extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "fish_id")
     @GenericGenerator(
@@ -32,21 +32,4 @@ public class FishKindEntity {
 
     @Column
     private long orderNo;
-
-    @Column(insertable = false)
-    private String useYn;
-
-    @Column
-    private String registrantId;
-
-    @Column(insertable = false, updatable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date registrationDatetime;
-
-    @Column
-    private String updateId;
-
-    @Column
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date  updateDatetime;
 }

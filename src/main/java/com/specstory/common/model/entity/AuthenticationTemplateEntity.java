@@ -1,24 +1,35 @@
 package com.specstory.common.model.entity;
 
+import lombok.Data;
 
-import lombok.*;
+import javax.persistence.*;
+import java.sql.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Getter
-@Setter
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Entity //클래스와 테이블 매핑
-@Table(name="authentication_template") // 매핑할 테이블 정보 명시
-public class AuthenticationTemplateEntity {
+@Entity
+@Table(name = "authentication_template")
+public class AuthenticationTemplateEntity extends BaseEntity {
 
-  @Id // 기본키 매핑
-   @Column(name = "template_id", nullable = false)
-   private String templateId;
+    @Id
+    @Column
+    private String templateId;
+
+    @Column
+    private String templateName;
+
+    @Column
+    private String authenticationType;
+
+    @Column
+    private String authenticationNoType;
+
+    @Column
+    private String serviceType;
+
+    @Column
+    private Integer effectiveTime;
+
+    @Column
+    private String templateMessage;
 
 }
