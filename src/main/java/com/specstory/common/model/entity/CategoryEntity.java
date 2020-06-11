@@ -22,17 +22,17 @@ public class CategoryEntity extends BaseEntity {
                    @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.INCREMENT_PARAM, value = "1"),
                    @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.VALUE_PREFIX_PARAMETER, value = "C"),
                    @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%03d") })
-   @Column(nullable = false)
+   @Column(name = "category_id", columnDefinition="CHAR(4)", unique = true, nullable = false)
    private String categoryId;
 
    @Column(nullable = false)
    private String categoryName;
 
    @Column
-   private Integer level;
+   private int level;
 
    @Column
-   private Integer orderNo;
+   private int orderNo;
 
    @Column
    private String url;

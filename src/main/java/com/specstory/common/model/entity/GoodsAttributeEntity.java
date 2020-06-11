@@ -12,8 +12,8 @@ import java.util.Date;
 public class GoodsAttributeEntity extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "attr_id")
-    private Long attrId;
+    @Column(name = "attr_id", unique = true, nullable = false)
+    private Integer attrId;
 
     @Column(name = "attr_name")
     private String attrName;
@@ -28,7 +28,7 @@ public class GoodsAttributeEntity extends BaseEntity {
     private String unit;
 
     @Column(name = "orderNo")
-    private Integer orderNo;
+    private int orderNo;
 
     // 연관관계 매핑
 //    @JsonIgnore //JSON 변환시 무한 루프 방지용

@@ -4,6 +4,7 @@ package com.specstory.common.model.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -13,15 +14,15 @@ import javax.persistence.*;
 @Entity //클래스와 테이블 매핑
 @Table(name="comparision_cart") // 매핑할 테이블 정보 명시
 public class ComparisionCartEntity {
+    @EmbeddedId
+    private ComparisionCartIdEntity comparisionCartId;
 
-  @Id // 기본키 매핑
-  @GeneratedValue(strategy = GenerationType.AUTO)
-   @Column(name = "user_Id", nullable = false)
-   private String userId;
+    @Column(name = "use_yn", columnDefinition = "CHAR(1)", insertable = false)
+    private String useYn;
 
-   @Column(name = "goods_Id", nullable = false)
-   private String goodsId;
+    @Column(name = "registration_datetime", columnDefinition = "등록일시", insertable = false, updatable = false)
+    //@Temporal(TemporalType.TIMESTAMP)
+    private LocalDateTime registrationDatetime;
 
-   @Column(name = "use_yn")
-   private String useYn;
+
 }

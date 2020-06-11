@@ -18,4 +18,14 @@ public class WishListEntity {
     @Column(columnDefinition = "등록일시", insertable = false, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date registrationDatetime;
+
+    @MapsId("userId")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="user_id")
+    private UserEntity userEntity;
+
+    @MapsId("goodsId")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="goods_id")
+    private GoodsEntity goodsEntity;
 }

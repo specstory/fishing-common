@@ -24,12 +24,12 @@ public class BrandEntity extends BaseEntity {
                    @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.VALUE_PREFIX_PARAMETER, value = "B"),
                    @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%03d") })
 
-   @Column(nullable = false, columnDefinition = "브랜드아이디", length = 5)
+   @Column(name = "brand_id", columnDefinition="CHAR(5)", unique = true, nullable = false)
    private String brandId;
 
    @Column(nullable = false, columnDefinition = "브랜드명", length = 50)
    private String brandName;
 
    @Column(columnDefinition = "순서")
-   private long orderNo;
+   private int orderNo;
 }
