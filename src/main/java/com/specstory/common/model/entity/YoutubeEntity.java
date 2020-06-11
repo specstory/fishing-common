@@ -16,7 +16,7 @@ public class YoutubeEntity {
     @Column
     private String url;
 
-    @Column(insertable = false, columnDefinition = "사용여부", length = 1)
+    @Column(name = "use_yn", columnDefinition = "CHAR(1)", insertable = false)
     private String useYn;
 
     @Column(columnDefinition = "등록일시", insertable = false, updatable = false)
@@ -30,6 +30,6 @@ public class YoutubeEntity {
 
     @MapsId("goodsId")
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="goods_id")
+    @JoinColumn(name="goods_id", columnDefinition = "CHAR(8)")
     private GoodsEntity goodsEntity;
 }

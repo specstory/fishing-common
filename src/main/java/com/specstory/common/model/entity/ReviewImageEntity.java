@@ -11,10 +11,10 @@ import java.sql.Date;
 public class ReviewImageEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
+    @Column(name = "image_id", unique = true, nullable = false)
     private Integer imageId;
 
-    @Column
+    @Column(name = "image_type", columnDefinition = "CHAR(5)")
     private String imageType;
 
     @Column
@@ -27,9 +27,9 @@ public class ReviewImageEntity {
     private String url;
 
     @Column
-    private Integer orderNo;
+    private int orderNo;
 
-    @Column
+    @Column(name = "use_yn", columnDefinition = "CHAR(1)", insertable = false)
     private String useYn;
 
     @ManyToOne(fetch = FetchType.LAZY)

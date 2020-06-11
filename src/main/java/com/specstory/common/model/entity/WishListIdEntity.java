@@ -10,9 +10,9 @@ import java.io.Serializable;
 //@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Embeddable
 public class WishListIdEntity implements Serializable {
-    @Column(nullable = false, columnDefinition = "회원아이디", length = 20)
+    @Column(name = "user_id", nullable = false, length = 20)
     private String userId;
 
-    @Column(nullable = false, columnDefinition = "상품아이디", length = 8)
+    @Column(name = "goods_id", columnDefinition = "CHAR(8)", nullable = false)
     private String goodsId;
 }

@@ -36,10 +36,10 @@ public class GoodsImageEntity extends BaseEntity {
     @Column(name = "order_no")
     private int orderNo;
 
-    @Column(name = "main_image_yn")
+    @Column(name = "main_image_yn", columnDefinition = "CHAR(1)")
     private String mainImageYn;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="goods_id")
+    @JoinColumn(name="goods_id", columnDefinition = "CHAR(8)")
     private GoodsEntity goodsEntity;
 }

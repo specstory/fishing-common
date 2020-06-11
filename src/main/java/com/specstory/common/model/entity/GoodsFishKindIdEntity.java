@@ -10,9 +10,9 @@ import java.io.Serializable;
 //@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Embeddable
 public class GoodsFishKindIdEntity implements Serializable {
-    @Column(columnDefinition = "CHAR(8)", nullable = false)
+    @Column(name = "goodsId", columnDefinition = "CHAR(8)", nullable = false)
     private String goodsId;
 
-    @Column(columnDefinition = "CHAR(4)", nullable = false)
+    @Column(name = "fish_id", columnDefinition = "CHAR(4)", nullable = false)
     private String fishId;
 }

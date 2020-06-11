@@ -14,11 +14,11 @@ import java.util.Set;
 public class ReviewEntity extends BaseEntity {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
-   @Column(nullable = false)
+   @Column(name = "review_id", unique = true, nullable = false)
    private Integer reviewId;
 
    @Column
-   private Float score;
+   private float score;
 
    @Column
    private String advantage;

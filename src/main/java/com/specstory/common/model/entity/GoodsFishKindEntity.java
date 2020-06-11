@@ -21,14 +21,12 @@ public class GoodsFishKindEntity extends BaseEntity {
   */
     @MapsId("goodsId")
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="goods_id")
+    @JoinColumn(name="goods_id", columnDefinition = "CHAR(8)")
     private GoodsEntity goodsEntity;
 
- /*   
-    사용할일이 없어서 일단 주석처리 필요시 주석제거
     @MapsId("fishId")
-    @ManyToOne//(fetch = FetchType.LAZY)
-    @JoinColumn(name="fish_id")
-    private FishKindEntity fishKindEntity;*/
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="fish_id", columnDefinition = "CHAR(4)")
+    private FishKindEntity fishKindEntity;
 
 }

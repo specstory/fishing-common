@@ -3,6 +3,7 @@ package com.specstory.common.model.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Data
@@ -12,12 +13,12 @@ public class WishListEntity {
     @EmbeddedId
     private WishListIdEntity wishListId;
 
-    @Column(insertable = false, columnDefinition = "사용여부", length = 1)
+    @Column(name = "use_yn", columnDefinition = "CHAR(1)", insertable = false)
     private String useYn;
 
-    @Column(columnDefinition = "등록일시", insertable = false, updatable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date registrationDatetime;
+    @Column(name = "registration_datetime", insertable = false, updatable = false)
+    //@Temporal(TemporalType.TIMESTAMP)
+    private LocalDateTime registrationDatetime;
 
     @MapsId("userId")
     @ManyToOne(fetch = FetchType.LAZY)
@@ -26,6 +27,6 @@ public class WishListEntity {
 
     @MapsId("goodsId")
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="goods_id")
+    @JoinColumn(name="goods_id", columnDefinition = "CHAR(8)")
     private GoodsEntity goodsEntity;
 }
