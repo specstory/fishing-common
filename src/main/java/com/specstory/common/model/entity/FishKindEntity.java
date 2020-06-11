@@ -6,6 +6,8 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @Entity
@@ -31,4 +33,7 @@ public class FishKindEntity extends BaseEntity {
 
     @Column
     private int orderNo;
+
+    @OneToMany(mappedBy = "fishKindEntity", fetch = FetchType.LAZY)
+    Set<GoodsFishKindEntity> goodsFishKindEntities = new HashSet<>();
 }

@@ -40,7 +40,7 @@ public class AuthenticationEntity {
     private String useYn;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="template_id")
+    @JoinColumn(name="template_id", columnDefinition="CHAR(4)")
     private AuthenticationTemplateEntity authenticationTemplateEntity;
 
 }

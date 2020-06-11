@@ -8,6 +8,8 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @Entity
@@ -45,4 +47,6 @@ public class AuthenticationTemplateEntity extends BaseEntity {
     @Column(name = "template_message")
     private String templateMessage;
 
+    @OneToMany(mappedBy = "authenticationTemplateEntity", fetch = FetchType.LAZY)
+    private Set<AuthenticationEntity> authenticationEntities = new HashSet<>();
 }

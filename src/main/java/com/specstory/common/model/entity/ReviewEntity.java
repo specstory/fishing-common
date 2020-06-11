@@ -36,7 +36,7 @@ public class ReviewEntity extends BaseEntity {
    @ManyToOne(fetch = FetchType.LAZY)
    @JoinColumn(name = "user_id")
    private UserEntity userEntity;
-//
-//   @OneToMany(mappedBy = "reviewImageEntity", fetch = FetchType.LAZY)
-//   Set<ReviewImageEntity> reviewImageEntities = new HashSet<>();
+
+   @OneToMany(mappedBy = "reviewEntity", fetch = FetchType.LAZY)
+   Set<ReviewImageEntity> reviewImageEntities = new HashSet<>();
 }

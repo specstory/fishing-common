@@ -19,12 +19,13 @@ public class LoginLogEntity {
     @Column(name = "log_Id", unique = true, nullable = false)
     private Integer logId;
 
-    @Column(name = "user_Id")
-    private String userId;
-
     @Column(name = "login_Fail_Yn", columnDefinition = "CHAR(1)")
     private String loginFailYn;
 
     @Column(name = "login_Datetime")
     private LocalDateTime loginDatetime;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="user_id")
+    private UserEntity userEntity;
 }

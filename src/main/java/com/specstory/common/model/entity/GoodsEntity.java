@@ -54,19 +54,30 @@ public class GoodsEntity extends BaseEntity {
     private String afterService;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="brand_id")
+    @JoinColumn(name="brand_id", columnDefinition = "CHAR(5)")
     private BrandEntity brandEntity;
 
-    //@JsonIgnoreProperties("goods")
-    //@OneToMany(mappedBy = "goodsEntity", fetch = FetchType.LAZY)
     @OneToMany(mappedBy = "goodsEntity", fetch = FetchType.LAZY)
-    Set<GoodsAttributeEntity> goodsAttributeEntities = new HashSet<>();
+    Set<GoodsCategoryEntity> goodsCategoryEntities = new HashSet<>();
 
-   //@JsonIgnoreProperties("goods")
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name="goods_id")
-    List<GoodsImageEntity> goodsImages = new ArrayList<>();
+    @OneToMany(mappedBy = "goodsEntity", fetch = FetchType.LAZY)
+    Set<GoodsFishKindEntity> goodsFishKindEntities = new HashSet<>();
 
     @OneToMany(mappedBy = "goodsEntity", fetch = FetchType.LAZY)
     Set<ReviewEntity> reviewEntities = new HashSet<>();
+
+    @OneToMany(mappedBy = "goodsEntity", fetch = FetchType.LAZY)
+    Set<GoodsImageEntity> goodsImageEntities = new HashSet<>();
+
+    @OneToMany(mappedBy = "goodsEntity", fetch = FetchType.LAZY)
+    Set<GoodsAttributeEntity> goodsAttributeEntities = new HashSet<>();
+
+    @OneToMany(mappedBy = "goodsEntity", fetch = FetchType.LAZY)
+    Set<ComparisionCartEntity> comparisionCartEntities = new HashSet<>();
+
+    @OneToMany(mappedBy = "goodsEntity", fetch = FetchType.LAZY)
+    Set<WishListEntity> wishListEntities = new HashSet<>();
+
+    @OneToMany(mappedBy = "goodsEntity", fetch = FetchType.LAZY)
+    Set<YoutubeEntity> youtubeEntities = new HashSet<>();
 }

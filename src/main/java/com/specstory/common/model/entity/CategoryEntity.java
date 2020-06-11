@@ -7,6 +7,8 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @Entity //클래스와 테이블 매핑
@@ -36,4 +38,7 @@ public class CategoryEntity extends BaseEntity {
 
    @Column
    private String url;
+
+   @OneToMany(mappedBy = "categoryEntity", fetch = FetchType.LAZY)
+   Set<GoodsCategoryEntity> goodsCategoryEntities = new HashSet<>();
 }

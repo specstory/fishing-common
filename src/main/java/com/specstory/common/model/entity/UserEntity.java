@@ -6,6 +6,8 @@ import org.springframework.data.convert.Jsr310Converters;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @Entity
@@ -75,6 +77,15 @@ public class UserEntity {
 
     //@Column(name = "login_failure_datetime", columnDefinition = "등록일시", insertable = false, updatable = false)
     @Column(name = "login_failure_datetime")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date loginFailureDatetime;
+    //@Temporal(TemporalType.TIMESTAMP)
+    private LocalDateTime loginFailureDatetime;
+
+    @OneToMany(mappedBy = "userEntity", fetch = FetchType.LAZY)
+    Set<ComparisionCartEntity> comparisionCartEntities = new HashSet<>();
+
+    @OneToMany(mappedBy = "userEntity", fetch = FetchType.LAZY)
+    Set<WishListEntity> wishListEntities = new HashSet<>();
+
+    @OneToMany(mappedBy = "userEntity", fetch = FetchType.LAZY)
+    Set<LoginLogEntity> loginLogEntities = new HashSet<>();
 }

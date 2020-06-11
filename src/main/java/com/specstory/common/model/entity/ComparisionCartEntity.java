@@ -24,5 +24,13 @@ public class ComparisionCartEntity {
     //@Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime registrationDatetime;
 
+    @MapsId("goodsId")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="goods_id", columnDefinition = "CHAR(8)")
+    private GoodsEntity goodsEntity;
 
+    @MapsId("userId")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="user_id")
+    private UserEntity userEntity;
 }
