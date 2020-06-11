@@ -27,7 +27,7 @@ public abstract class BaseEntity {
 
     @Column(columnDefinition = "수정자", length = 20)
     private String updateId;
-
+p
     @Column(columnDefinition = "수정일시")
     @Temporal(TemporalType.TIMESTAMP)
     private Date updateDatetime;
