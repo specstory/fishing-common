@@ -20,16 +20,15 @@ public class FishKindEntity extends BaseEntity {
                     @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.INCREMENT_PARAM, value = "1"),
                     @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.VALUE_PREFIX_PARAMETER, value = "F"),
                     @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%03d") })
-
-    @Column(nullable = false)
+    @Column(name = "fish_id", columnDefinition="CHAR(4)", unique = true, nullable = false)
     private String fishId;
 
     @Column(nullable = false)
     private String fishName;
 
     @Column
-    private long level;
+    private int level;
 
     @Column
-    private long orderNo;
+    private int orderNo;
 }

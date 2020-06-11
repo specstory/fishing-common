@@ -31,7 +31,8 @@ public class GoodsEntity extends BaseEntity {
         this.afterService = afterService;
     }*/
 
-    @Id // 기본키 매핑
+    // 상품아이디
+    @Id 
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "goods_seq")
     @GenericGenerator(
             name = "goods_seq",
@@ -40,7 +41,7 @@ public class GoodsEntity extends BaseEntity {
                     @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.INCREMENT_PARAM, value = "1"),
                     @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.VALUE_PREFIX_PARAMETER, value = "G"),
                     @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%07d") })
-    @Column(name = "goods_id", length = 8, nullable = false, columnDefinition = "상품아이디")
+    @Column(name = "goods_id", columnDefinition="CHAR(8)", unique = true, nullable = false)
     private String goodsId;
 
     @Column(name = "goods_name", columnDefinition = "상품명", length = 30)

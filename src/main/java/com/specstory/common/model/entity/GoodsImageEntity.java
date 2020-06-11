@@ -17,14 +17,11 @@ import lombok.Data;
 public class GoodsImageEntity extends BaseEntity {
 
     @Id // 기본키 매핑
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "image_id", nullable = false)
-    private long imageId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "image_id", unique = true, nullable = false)
+    private Integer imageId;
 
-    @Column(name = "goods_id", nullable = false)
-    private String goodsId;
-
-    @Column(name = "image_type")
+    @Column(name = "image_type", columnDefinition = "CHAR(5)")
     private String imageType;
 
     @Column(name = "file_name")
@@ -37,9 +34,12 @@ public class GoodsImageEntity extends BaseEntity {
     private String url;
 
     @Column(name = "order_no")
-    private String orderNo;
+    private int orderNo;
 
     @Column(name = "main_image_yn")
     private String mainImageYn;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="goods_id")
+    private GoodsEntity goodsEntity;
 }
