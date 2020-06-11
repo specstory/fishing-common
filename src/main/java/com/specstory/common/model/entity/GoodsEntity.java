@@ -13,25 +13,12 @@ import org.springframework.data.annotation.LastModifiedDate;
 import java.time.LocalDateTime;
 import java.util.*;
 
-@NoArgsConstructor
+//@Data
 @Getter
 @Setter
-@Entity //클래스와 테이블 매핑
-@Table(name = "goods") // 매핑할 테이블 정보 명시
+@Entity
+@Table(name = "goods")
 public class GoodsEntity extends BaseEntity {
-/*    @Builder
-    public GoodsEntity(String goodsId, String brandId, String goodsName, int price, String afterService
-            , List<GoodsAttributeEntity> goodsAttributes
-            , List<GoodsCategoryEntity> goodsCategory
-            , List<GoodsImageEntity> goodsImage) {
-        this.goodsId = goodsId;
-        this.brandId = brandId;
-        this.goodsName= goodsName;
-        this.price = price;
-        this.afterService = afterService;
-    }*/
-
-    // 상품아이디
     @Id 
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "goods_seq")
     @GenericGenerator(

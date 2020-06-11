@@ -9,8 +9,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Data
-@Entity //클래스와 테이블 매핑
-@Table(name="review") // 매핑할 테이블 정보 명시
+@Entity
+@Table(name="review")
 public class ReviewEntity extends BaseEntity {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)

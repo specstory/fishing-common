@@ -1,6 +1,5 @@
 package com.specstory.common.model.entity;
 
-
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
@@ -8,10 +7,7 @@ import javax.persistence.*;
 
 import lombok.Data;
 
-
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity //클래스와 테이블 매핑
 @Table(name = "goods_image") // 매핑할 테이블 정보 명시
 public class GoodsImageEntity extends BaseEntity {
