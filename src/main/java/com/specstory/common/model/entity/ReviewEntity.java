@@ -18,7 +18,7 @@ public class ReviewEntity extends BaseEntity {
    private Integer reviewId;
 
    @Column
-   private float score;
+   private int score;
 
    @Column
    private String advantage;
