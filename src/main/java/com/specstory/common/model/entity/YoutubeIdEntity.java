@@ -1,13 +1,17 @@
 package com.specstory.common.model.entity;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.io.Serializable;
 
-@Data
-//@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@Getter
+@Setter
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Embeddable
 public class YoutubeIdEntity implements Serializable {
     @Column(name = "user_id", nullable = false, length = 20)

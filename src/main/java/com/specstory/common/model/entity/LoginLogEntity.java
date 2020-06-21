@@ -6,7 +6,8 @@ import lombok.*;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Data
+@Getter
+@Setter
 @Entity //클래스와 테이블 매핑
 @Table(name="login_log") // 매핑할 테이블 정보 명시
 public class LoginLogEntity {

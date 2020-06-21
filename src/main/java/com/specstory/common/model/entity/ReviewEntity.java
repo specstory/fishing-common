@@ -8,7 +8,8 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name="review")
 public class ReviewEntity extends BaseEntity {

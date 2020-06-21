@@ -3,6 +3,8 @@ package com.specstory.common.model.entity;
 
 import com.specstory.common.util.StringPrefixedSequenceIdGenerator;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -10,7 +12,8 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
 @Entity //클래스와 테이블 매핑
 @Table(name="category") // 매핑할 테이블 정보 명시
 public class CategoryEntity extends BaseEntity {

@@ -3,7 +3,9 @@ package com.specstory.common.model.entity;
 import com.specstory.common.model.entity.BaseEntity;
 import com.specstory.common.util.StringPrefixedSequenceIdGenerator;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -11,7 +13,8 @@ import java.sql.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "authentication_template")
 public class AuthenticationTemplateEntity extends BaseEntity {

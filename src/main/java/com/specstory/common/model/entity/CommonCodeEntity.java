@@ -8,7 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Data
+@Getter
+@Setter
 @Entity //클래스와 테이블 매핑
 @Table(name="common_code") // 매핑할 테이블 정보 명시
 public class CommonCodeEntity extends BaseEntity {

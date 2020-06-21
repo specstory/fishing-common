@@ -2,6 +2,8 @@ package com.specstory.common.model.entity;
 
 import com.specstory.common.util.StringPrefixedSequenceIdGenerator;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -9,7 +11,8 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "fish_kind")
 public class FishKindEntity extends BaseEntity {
