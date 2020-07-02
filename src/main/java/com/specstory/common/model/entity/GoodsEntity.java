@@ -31,6 +31,12 @@ public class GoodsEntity extends BaseEntity {
     @Column(name = "goods_id", columnDefinition="CHAR(8)", unique = true, nullable = false)
     private String goodsId;
 
+    @Column(name = "goods_section", columnDefinition = "CHAR(5)")
+    private String goodsSection;
+
+    @Column(name = "goods_type", columnDefinition = "CHAR(5)")
+    private String goodsType;
+
     @Column(name = "goods_name", columnDefinition = "상품명", length = 30)
     private String goodsName;
 
