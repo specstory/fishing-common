@@ -20,5 +20,5 @@ public class GoodsAttributeIdEntity implements Serializable {
     private String goodsId;
 
     @Column(nullable = false)
-    private int attrTemplateId;
+    private Integer attrTemplateId;
 }

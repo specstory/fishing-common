@@ -19,12 +19,11 @@ public class GoodsAttributeEntity extends BaseEntity {
 
     @MapsId("goodsId")
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "goods_id")
+    @JoinColumn(name = "goods_id", columnDefinition = "CHAR(8)")
     private GoodsEntity goodsEntity;
 
-/*    @MapsId("attrTemplateId")
+    @MapsId("attrTemplateId")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "attr_template_id")
-    private GoodsAttributeTemplateEntity goodsAttributeTemplateEntity;*/
-
+    private GoodsAttributeTemplateEntity goodsAttributeTemplateEntity;
 }
