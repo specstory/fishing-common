@@ -5,6 +5,9 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+/**
+ * ReviewImageEntity
+ */
 @Getter
 @Setter
 @Entity

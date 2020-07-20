@@ -7,6 +7,9 @@ import org.aspectj.lang.annotation.Aspect;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StopWatch;
 
+/**
+ * StopWatchAspect
+ */
 @Slf4j
 @Component
 @Aspect

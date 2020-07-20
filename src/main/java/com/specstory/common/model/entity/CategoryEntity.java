@@ -10,6 +10,9 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * CategoryEntity
+ */
 @Getter
 @Setter
 @Entity //클래스와 테이블 매핑

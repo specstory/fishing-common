@@ -7,6 +7,9 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+/**
+ * ComparisionCartEntity
+ */
 @Getter
 @Setter
 @Entity //클래스와 테이블 매핑

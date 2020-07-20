@@ -7,6 +7,9 @@ import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 import java.time.LocalDateTime;
 
+/**
+ * BaseEntity
+ */
 @Getter
 @Setter
 @MappedSuperclass

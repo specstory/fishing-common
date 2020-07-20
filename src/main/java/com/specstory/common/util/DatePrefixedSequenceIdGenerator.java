@@ -13,19 +13,6 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Properties;
 
-/*
-연도 및 월 다음에 시퀀스 기반 값
-
-@Id
-@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "book_seq")
-@GenericGenerator(
-    name = "book_seq",
-    strategy = "org.thoughts.on.java.generators.DatePrefixedSequenceIdGenerator",
-    parameters = {@Parameter(name = DatePrefixedSequenceIdGenerator.INCREMENT_PARAM, value = "50")})
-private String id;
-
-ex)2018-08_00001
- */
 public class DatePrefixedSequenceIdGenerator extends SequenceStyleGenerator {
 
     public static final String DATE_FORMAT_PARAMETER = "dateFormat";

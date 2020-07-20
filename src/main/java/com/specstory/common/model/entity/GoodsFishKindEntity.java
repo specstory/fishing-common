@@ -5,6 +5,9 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+/**
+ * GoodsFishKindEntity
+ */
 @Getter
 @Setter
 @Entity

@@ -9,6 +9,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * CommonCodeEntity
+ */
 @Getter
 @Setter
 @Entity //클래스와 테이블 매핑

@@ -6,6 +6,9 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+/**
+ * GoodsAttributeEntity
+ */
 @Getter
 @Setter
 @Entity //클래스와 테이블 매핑

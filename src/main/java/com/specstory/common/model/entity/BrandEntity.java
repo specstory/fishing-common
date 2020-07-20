@@ -11,6 +11,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 
+/**
+ * BrandEntity
+ */
 @Getter
 @Setter
 @Entity //클래스와 테이블 매핑
