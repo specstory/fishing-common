@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.specstory</groupId>
     <artifactId>specstory-common</artifactId>
-    <version>0.1.6-SNAPSHOT</version>
+    <version>0.1.7-SNAPSHOT</version>
     <name>specstory-common</name>
     <description>library for fishing story</description>
     <url>https://github.com/specstory/fishing-common</url>
