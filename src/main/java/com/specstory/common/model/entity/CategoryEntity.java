@@ -31,6 +31,9 @@ public class CategoryEntity extends BaseEntity {
    @Column(name = "category_id", columnDefinition="CHAR(4)", unique = true, nullable = false)
    private String categoryId;
 
+   @Column(name = "category_upper", columnDefinition="CHAR(4)")
+   private String categoryUpper;
+
    @Column(nullable = false)
    private String categoryName;
 
